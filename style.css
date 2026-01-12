@@ -8,7 +8,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-blue-100: oklch(93.2% 0.032 255.585);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -36,9 +35,9 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-akams-yellow: #ffca3a;
+    --color-akams-yellow: #ffd700;
+    --color-akams-forest: #1b4332;
     --color-akams-dark: #111827;
-    --color-akams-blue: #2563eb;
     --radius-super: 50px;
   }
 }
@@ -301,17 +300,17 @@
   .bg-\[\#25D366\] {
     background-color: #25D366;
   }
-  .bg-akams-blue {
-    background-color: var(--color-akams-blue);
-  }
   .bg-akams-dark {
     background-color: var(--color-akams-dark);
+  }
+  .bg-akams-forest {
+    background-color: var(--color-akams-forest);
   }
   .bg-akams-yellow {
     background-color: var(--color-akams-yellow);
   }
   .bg-akams-yellow\/20 {
-    background-color: color-mix(in srgb, #ffca3a 20%, transparent);
+    background-color: color-mix(in srgb, #ffd700 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-akams-yellow) 20%, transparent);
     }
@@ -451,8 +450,8 @@
     --tw-blur: blur(var(--blur-3xl));
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
-  .transition-colors {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  .transition-all {
+    transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -519,10 +518,11 @@
       }
     }
   }
-  .hover\:bg-blue-700 {
+  .hover\:brightness-110 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-blue-700);
+        --tw-brightness: brightness(110%);
+        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
       }
     }
   }

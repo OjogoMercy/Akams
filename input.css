@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  @theme {
-    --color-akams-yellow: #ffd700;
-    --color-akams-green: #228b22;
-    --color-akams-forest: #1b4332;
-    --color-akams-dark: #111827;
-    --color-akams-orange: #ff8c00;
-  }
+  --color-akams-yellow: #ffd700;
+  --color-akams-green: #228b22;
+  --color-akams-forest: #1b4332;
+  --color-akams-dark: #111827;
+  --color-akams-orange: #ff8c00;
+
   /* Custom Spacing */
-  --radius-super: 50px; /* For those extra rounded corners */
+  --radius-super: 50px; 
 
   /* Custom Shadows for the white cards */
   --shadow-soft: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
@@ -18,7 +17,7 @@
 /* Base styles to ensure a clean font everywhere */
 @layer base {
   body {
-    font-family: sans-serif; /* Use a clean font like Inter or Arial */
+    font-family: sans-serif;
     @apply bg-white antialiased;
   }
 }
