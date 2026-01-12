@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-akams-yellow: #ffca3a; /* The bright yellow */
+  --color-akams-dark: #111827; /* Deep charcoal background */
+  --color-akams-blue: #2563eb; /* The new blue for service buttons */
+
+  /* Custom Spacing */
+  --radius-super: 50px; /* For those extra rounded corners */
+
+  /* Custom Shadows for the white cards */
+  --shadow-soft: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles to ensure a clean font everywhere */
+@layer base {
+  body {
+    font-family: sans-serif; /* Use a clean font like Inter or Arial */
+    @apply bg-white antialiased;
+  }
+}
