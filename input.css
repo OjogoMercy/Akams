@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors */
-  --color-akams-yellow: #ffca3a; /* The bright yellow */
-  --color-akams-dark: #111827; /* Deep charcoal background */
-  --color-akams-blue: #2563eb; /* The new blue for service buttons */
-
+  @theme {
+    --color-akams-yellow: #ffd700;
+    --color-akams-green: #228b22;
+    --color-akams-forest: #1b4332;
+    --color-akams-dark: #111827;
+    --color-akams-orange: #ff8c00;
+  }
   /* Custom Spacing */
   --radius-super: 50px; /* For those extra rounded corners */
 
