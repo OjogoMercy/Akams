@@ -60,7 +60,7 @@
         </h1>
         <div class="grid md:grid-cols-3 gap-8">
           <div
-            class="bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
+            class="reveal-element opacity-0 bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
           >
             <div
               class="w-20 h-20 mb-6 bg-akams-yellow/20 rounded-full flex items-center justify-center overflow-hidden border-4 border-[var(--color-akams-yellow)]"
@@ -87,7 +87,7 @@
           </div>
 
           <div
-            class="bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
+            class="reveal-element opacity-0 bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
           >
             <div
               class="w-20 h-20 mb-6 bg-akams-yellow/20 rounded-full flex items-center justify-center overflow-hidden border-4 border-akams-yellow border-style: solid"
@@ -114,7 +114,7 @@
           </div>
 
           <div
-            class="bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
+            class="reveal-element opacity-0 bg-white rounded-super p-10 text-center shadow-soft border border-gray-100 flex flex-col items-center transition-transform hover:-translate-y-2"
           >
             <div
               class="w-20 h-20 mb-6 bg-akams-yellow/20 rounded-full flex items-center justify-center overflow-hidden border-4 border-akams-yellow"
@@ -149,9 +149,11 @@
           Premium Products
         </h1>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="flex overflow-x-auto pb-8 snap-x snap-mandatory grid md:grid-cols-3 gap-8"
+        >
           <div
-            class="group bg-white rounded-super p-10 text-center shadow-soft outline outline-2 outline-transparent hover:outline-yellow-500 flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
+            class="reveal-element opacity-0 group bg-white rounded-super p-10 text-center shadow-soft outline outline-2 outline-transparent hover:outline-yellow-500 flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
           >
             <div
               class="w-full h-48 group-hover:h-64 mb-6 overflow-hidden rounded-2xl transition-all duration-500 ease-in-out"
@@ -179,7 +181,7 @@
           </div>
 
           <div
-            class="group bg-white rounded-super p-10 text-center shadow-soft border-2 border-transparent hover:border-akams-yellow flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
+            class="reveal-element opacity-0 group bg-white rounded-super p-10 text-center shadow-soft border-2 border-transparent hover:border-akams-yellow flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
           >
             <div
               class="w-full h-48 group-hover:h-64 mb-6 overflow-hidden rounded-2xl transition-all duration-500 ease-in-out"
@@ -207,7 +209,7 @@
           </div>
 
           <div
-            class="group bg-white rounded-super p-10 text-center shadow-soft border-2 border-transparent hover:border-akams-yellow flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
+            class="reveal-element opacity-0 group bg-white rounded-super p-10 text-center shadow-soft border-2 border-transparent hover:border-akams-yellow flex flex-col items-center transition-all duration-500 hover:-translate-y-2"
           >
             <div
               class="w-full h-48 group-hover:h-64 mb-6 overflow-hidden rounded-2xl transition-all duration-500 ease-in-out"
@@ -237,7 +239,7 @@
       </div>
     </section>
 
-    <section class="bg-white py-24 border-t border-gray-100">
+    <section class="bg-gray-100 py-24 border-t border-gray-100">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <div class="mb-16">
           <h3
@@ -257,7 +259,9 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-12 mt-16 max-w-5xl mx-auto">
-          <div class="flex flex-col items-center text-center space-y-4 group">
+          <div
+            class="opacity-0 reveal-element flex flex-col items-center text-center space-y-4 group"
+          >
             <div
               class="w-12 h-12 bg-akams-orange/10 rounded-xl flex items-center justify-center transition-colors group-hover:bg-akams-orange/20"
             >
@@ -285,7 +289,9 @@
             </div>
           </div>
 
-          <div class="flex flex-col items-center text-center space-y-4 group">
+          <div
+            class="reveal-element opacity-0 flex flex-col items-center text-center space-y-4 group"
+          >
             <div
               class="w-12 h-12 bg-akams-forest/10 rounded-xl flex items-center justify-center transition-colors group-hover:bg-akams-forest/20"
             >
@@ -313,7 +319,9 @@
             </div>
           </div>
 
-          <div class="flex flex-col items-center text-center space-y-4 group">
+          <div
+            class="reveal-element opacity-0 flex flex-col items-center text-center space-y-4 group"
+          >
             <div
               class="w-12 h-12 bg-akams-yellow/20 rounded-xl flex items-center justify-center transition-colors group-hover:bg-akams-yellow/40"
             >
@@ -377,5 +385,27 @@
         </svg>
       </div>
     </a>
+
+    <script>
+      const observerOptions = {
+        threshold: 0.15,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("reveal-visible");
+            }, index * 150);
+
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal-element").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
