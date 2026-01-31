@@ -7,28 +7,105 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <section class="bg-akams-dark min-h-[85vh] flex items-center py-20">
+    <nav class="fixed top-0 w-full z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 h-17 flex justify-between items-center bg-akams-dark/60 backdrop-blur-lg rounded-b-2xl"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="w-9 h-9 bg-akams-yellow rounded-lg flex items-center justify-center shadow-[0_0_10px_rgba(255,215,0,0.25)]"
+          >
+            <span class="text-akams-dark font-black text-lg">A</span>
+          </div>
+          <div class="leading-none">
+            <span class="text-white font-black text-lg tracking-tight">
+              AKAMS <span class="text-akams-yellow">SOLAR</span>
+            </span>
+            <span
+              class="block text-[10px] text-white/40 uppercase tracking-widest"
+            >
+              Smart Energy
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-12">
+          <a
+            href="index.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/50 hover:text-white transition"
+          >
+            Home
+          </a>
+          <a
+            href="portfolio.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition"
+          >
+            Portfolio
+          </a>
+          <a
+            href="faq.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition"
+          >
+            FAQ
+          </a>
+
+          <!-- Softer CTA -->
+          <a
+            href="https://wa.me/2349158661112"
+            class="border border-akams-yellow/30 text-akams-yellow px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-akams-yellow hover:text-akams-dark transition-all"
+          >
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-white/70 hover:text-white transition"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 8h16M4 16h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    </script>
+    <section class="bg-akams-dark min-h-[85vh] flex items-center py-30">
       <div
         class="max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-16 items-center"
       >
         <div class="text-center lg:text-left space-y-8">
-          <h3 class="text-white font-bold uppercase tracking-wider">
-            AKAMS <span class="text-akams-yellow">SOLAR</span>
-          </h3>
           <h1
-            class="text-5xl lg:text-7xl font-extrabold text-white leading-tight"
+            class="text-5xl lg:text-7xl font-extrabold text-white leading-[1.05]"
           >
-            Power Your Home with <br />
-            Cutting-Edge
-            <span class="text-akams-yellow">Solar Technology!</span>
+            Power Your Home<br />
+            with Cutting-Edge<br />
+            <span class="text-akams-yellow">Solar Technology</span>
           </h1>
-          <p class="text-gray-300 text-lg max-w-xl mx-auto lg:mx-0">
+
+          <p class="text-gray-300 text-lg max-w-lg">
             Stop worrying about electricity bills. Take control of your power
             today with expert installation.
           </p>
           <div>
             <button
-              class="bg-akams-yellow text-akams-dark px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+              class="bg-akams-yellow text-akams-dark px-10 py-4 rounded-full font-bold text-lg shadow-[0_0_25px_rgba(255,215,0,0.25)] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,215,0,0.45)] transition-all"
             >
               Save on Bills Now
             </button>
@@ -38,9 +115,7 @@
         <div
           class="relative h-[400px] lg:h-[500px] group overflow-hidden rounded-super"
         >
-          <div
-            class="absolute inset-0 bg-akams-yellow/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-super"
-          ></div>
+          <div class="absolute inset-0 shadow-inner rounded-super"></div>
           <img
             src="https://thearchitectsdiary.com/wp-content/uploads/2020/11/Installing-Solar-Panels-In-Your-Home-1.jpeg"
             alt="Solar Installation Team"
