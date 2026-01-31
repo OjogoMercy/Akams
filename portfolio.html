@@ -129,15 +129,37 @@
         });
       });
     </script>
-    <section class="pt-40 pb-24 text-center relative overflow-hidden">
+
+    <section
+      class="relative h-[60vh] flex items-center justify-center overflow-hidden"
+    >
+      <img
+        src="https://thearchitectsdiary.com/wp-content/uploads/2020/11/Installing-Solar-Panels-In-Your-Home-1.jpeg"
+        alt="Solar installations by AKAMS Solar"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-akams-dark/70"></div>
+
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-4xl lg:text-6xl font-extrabold text-white">
+          Our Proven <span class="text-akams-yellow">Track Record</span>
+        </h1>
+        <p class="mt-6 text-white/70 max-w-2xl mx-auto text-lg">
+          A collection of real-world solar installations delivered with
+          precision, reliability, and long-term performance.
+        </p>
+      </div>
+    </section>
+    <section class="pt-20 pb-24 text-center relative overflow-hidden">
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"
       ></div>
 
       <div class="relative max-w-4xl mx-auto px-6">
-        <h1 class="text-4xl lg:text-5xl font-extrabold mb-6">
+        <h3 class="text-2xl lg:text-4xl font-extrabold mb-6">
           Our Proven <span class="text-akams-yellow">Projects</span>
-        </h1>
+        </h3>
         <p class="text-white/70 text-lg max-w-2xl mx-auto">
           A showcase of real-world solar installations delivering reliable power
           to homes and businesses.
@@ -146,32 +168,51 @@
     </section>
 
     <!-- Portfolio Grid -->
-    <section class="pb-32">
+
+    <section class="bg-akams-dark">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- Card -->
           <div
-            class="group relative overflow-hidden rounded-super h-[420px] bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+            class="bg-white/5 border border-white/10 rounded-super overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:translate-y-[-4px] transition-transform duration-300"
           >
-            <img
-              src="project1.jpg"
-              alt="Residential Solar Installation"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            />
+            <div class="h-[260px] overflow-hidden">
+              <img
+                src="https://tse2.mm.bing.net/th/id/OIP.oy6UfP88CjbnL9pvNtrVMQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Residential Solar Installation"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
 
-            <!-- Overlay -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-akams-dark/90 via-akams-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-
-            <!-- Content -->
-            <div
-              class="absolute bottom-0 p-8 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
-            >
-              <h4 class="text-xl font-bold mb-1">
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">
                 Residential Solar Installation
-              </h4>
-              <p class="text-akams-yellow text-sm uppercase tracking-widest">
-                10KVA Hybrid System
+              </h3>
+              <p class="text-white/60 text-sm leading-relaxed">
+                10KVA hybrid solar system installed for a private residence,
+                providing uninterrupted power and reduced energy costs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 border border-white/10 rounded-super overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:translate-y-[-4px] transition-transform duration-300"
+          >
+            <div class="h-[260px] overflow-hidden">
+              <img
+                src="https://tse2.mm.bing.net/th/id/OIP.oy6UfP88CjbnL9pvNtrVMQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Commercial Solar Project"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2">
+                Commercial Solar Setup
+              </h3>
+              <p class="text-white/60 text-sm leading-relaxed">
+                Large-scale solar installation designed to support daily
+                business operations with reliable renewable energy.
               </p>
             </div>
           </div>
