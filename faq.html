@@ -8,6 +8,128 @@
   </head>
 
   <body class="bg-akams-dark text-white">
+    <nav class="fixed top-0 w-full z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 h-17 flex justify-between items-center bg-akams-dark/60 backdrop-blur-lg rounded-b-2xl"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="w-9 h-9 bg-akams-yellow rounded-lg flex items-center justify-center shadow-[0_0_10px_rgba(255,215,0,0.25)]"
+          >
+            <span class="text-akams-dark font-black text-lg">A</span>
+          </div>
+          <div class="leading-none">
+            <span class="text-white font-black text-lg tracking-tight">
+              AKAMS <span class="text-akams-yellow">SOLAR</span>
+            </span>
+            <span
+              class="block text-[10px] text-white/40 uppercase tracking-widest"
+            >
+              Smart Energy
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-12">
+          <a
+            href="index.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/50 hover:text-white transition"
+          >
+            Home
+          </a>
+          <a
+            href="portfolio.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition"
+          >
+            Portfolio
+          </a>
+          <a
+            href="faq.html"
+            class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition"
+          >
+            FAQ
+          </a>
+
+          <a
+            href="https://wa.me/2349158661112"
+            class="border border-akams-yellow/30 text-akams-yellow px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-akams-yellow hover:text-akams-dark transition-all"
+          >
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-white/70 hover:text-white transition"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 8h16M4 16h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden fixed inset-x-0 top-16 z-40 bg-akams-dark/95 backdrop-blur-xl border-t border-white/10"
+    >
+      <div class="flex flex-col px-6 py-8 space-y-6">
+        <a
+          href="index.html"
+          class="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-white"
+        >
+          Home
+        </a>
+
+        <a
+          href="portfolio.html"
+          class="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-white"
+        >
+          Portfolio
+        </a>
+
+        <a
+          href="faq.html"
+          class="text-sm uppercase tracking-widest font-semibold text-white/80 hover:text-white"
+        >
+          FAQ
+        </a>
+
+        <a
+          href="https://wa.me/2349158661112"
+          class="mt-4 inline-block text-center bg-akams-yellow text-akams-dark px-8 py-4 rounded-full font-bold uppercase tracking-widest"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+
     <section class="pt-25 pb-24 text-center relative overflow-hidden">
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"
@@ -21,14 +143,17 @@
           Everything you need to know about our solar solutions, installations,
           and support.
         </p>
+        <p class="text-white/50 mt-2 text-sm">
+          Clear answers. Honest guidance. No hidden surprises.
+        </p>
       </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="pb-32">
-      <div class="max-w-3xl mx-auto px-6 space-y-6">
+      <div class="max-w-3xl mx-auto px-6 space-y-8">
         <details
-          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
+          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all hover:bg-white/10 cursor-pointer"
         >
           <summary
             class="flex justify-between items-center cursor-pointer font-semibold list-none"
@@ -36,7 +161,7 @@
             <span>Do your solar systems work during the rainy season?</span>
             <span
               class="text-akams-yellow transition-transform group-open:rotate-180"
-              >⌄</span
+              >></span
             >
           </summary>
           <p class="mt-4 text-white/70 leading-relaxed">
@@ -48,7 +173,7 @@
         </details>
 
         <details
-          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
+          class="hover:bg-white/10 cursor-pointer group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
         >
           <summary
             class="flex justify-between items-center cursor-pointer font-semibold list-none"
@@ -56,7 +181,7 @@
             <span>How long does installation take?</span>
             <span
               class="text-akams-yellow transition-transform group-open:rotate-180"
-              >⌄</span
+              >></span
             >
           </summary>
           <p class="mt-4 text-white/70 leading-relaxed">
@@ -67,7 +192,7 @@
         </details>
 
         <details
-          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
+          class="hover:bg-white/10 cursor-pointer group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
         >
           <summary
             class="flex justify-between items-center cursor-pointer font-semibold list-none"
@@ -75,7 +200,7 @@
             <span>Will solar power my entire home?</span>
             <span
               class="text-akams-yellow transition-transform group-open:rotate-180"
-              >⌄</span
+              >></span
             >
           </summary>
           <p class="mt-4 text-white/70 leading-relaxed">
@@ -86,7 +211,7 @@
         </details>
 
         <details
-          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
+          class="hover:bg-white/10 cursor-pointer group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
         >
           <summary
             class="flex justify-between items-center cursor-pointer font-semibold list-none"
@@ -94,7 +219,7 @@
             <span>What happens during power outages?</span>
             <span
               class="text-akams-yellow transition-transform group-open:rotate-180"
-              >⌄</span
+              >></span
             >
           </summary>
           <p class="mt-4 text-white/70 leading-relaxed">
@@ -105,15 +230,15 @@
         </details>
 
         <details
-          class="group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
+          class="hover:bg-white/10 cursor-pointer group bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 open:border-akams-yellow transition-all"
         >
           <summary
             class="flex justify-between items-center cursor-pointer font-semibold list-none"
           >
             <span>Do you provide maintenance and support?</span>
             <span
-              class="text-akams-yellow transition-transform group-open:rotate-180"
-              >⌄</span
+              class="text-akams-yellow text-lg transition-all duration-300 group-open:rotate-180 group-open:opacity-100 opacity-70"
+              >></span
             >
           </summary>
           <p class="mt-4 text-white/70 leading-relaxed">
@@ -122,6 +247,17 @@
             system’s lifespan.
           </p>
         </details>
+      </div>
+      <div class="text-center mt-24">
+        <p class="text-white/70 mb-6">
+          Still have questions? We’re happy to help.
+        </p>
+        <a
+          href="https://wa.me/2349158661112"
+          class="bg-akams-yellow text-akams-dark px-10 py-4 rounded-full font-bold text-lg shadow-[0_0_25px_rgba(255,215,0,0.25)] hover:scale-90 hover:shadow-[0_0_40px_rgba(255,215,0,0.3)] transition-all"
+        >
+          Talk to an Expert
+        </a>
       </div>
     </section>
   </body>
