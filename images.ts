@@ -1,6 +1,4 @@
-/* Auto-generated file — do not edit. Generated on 2026-01-31 */
-
-const images = {
+  const images = {
   akams_roof: require("./assets/akams-roof.jpg"),
   akams: require("./assets/Akams.jpg"),
   homeInstallation: require("./assets/homeInstallation.jpg"),
@@ -19,7 +17,6 @@ const images = {
   wallSystem: require("./assets/wallSystem.jpg"),
 };
 
-// Destructure to keep named exports functional
 export const {
   akams_roof, akams, homeInstallation, img_wa0030, img_wa0032, 
   img_wa0035, img_wa0036, img_wa0038, inverters, inverterSystem, 
