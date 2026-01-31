@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/OjogoMercy/Akams#readme",
   "devDependencies": {
+    "@types/node": "^25.1.0",
     "tailwindcss": "^4.1.18"
   },
   "dependencies": {
