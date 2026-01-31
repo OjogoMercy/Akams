@@ -166,56 +166,40 @@
         </p>
       </div>
     </section>
-    
-    <section class="bg-akams-dark pb-20">
+
+    <section class="bg-akams-dark pb-24">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          <!-- Card -->
-          <div
-            class="bg-white/5 border border-white/10 rounded-super overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:translate-y-[-4px] transition-transform duration-300"
-          >
-            <div class="h-[260px] overflow-hidden">
-              <img
-                src="https://tse2.mm.bing.net/th/id/OIP.oy6UfP88CjbnL9pvNtrVMQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
-                alt="Residential Solar Installation"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white mb-2">
-                Residential Solar Installation
-              </h3>
-              <p class="text-white/60 text-sm leading-relaxed">
-                10KVA hybrid solar system installed for a private residence,
-                providing uninterrupted power and reduced energy costs.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="bg-white/5 border border-white/10 rounded-super overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:translate-y-[-4px] transition-transform duration-300"
-          >
-            <div class="h-[260px] overflow-hidden">
-              <img
-                src="https://tse2.mm.bing.net/th/id/OIP.oy6UfP88CjbnL9pvNtrVMQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
-                alt="Commercial Solar Project"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white mb-2">
-                Commercial Solar Setup
-              </h3>
-              <p class="text-white/60 text-sm leading-relaxed">
-                Large-scale solar installation designed to support daily
-                business operations with reliable renewable energy.
-              </p>
-            </div>
-          </div>
-        </div>
+        <div
+          id="portfolio-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        ></div>
       </div>
     </section>
+
+    <script type="module" src="./database.js"></script>
+
+    <script>
+      window.addEventListener("load", () => {
+        const observerOptions = { threshold: 0.15 };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("reveal-visible");
+                entry.target.classList.replace("opacity-0", "opacity-100");
+              }, index * 150);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        setTimeout(() => {
+          document.querySelectorAll(".reveal-element").forEach((el) => {
+            observer.observe(el);
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>
